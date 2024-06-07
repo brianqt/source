@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSEKUTUAN ONSITE SORE MUDA GEMBIRA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+        }
+        .intro {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .fade-in {
+            opacity: 1;
+        }
+        .fade-out {
+            opacity: 0;
+        }
+        .main-menu, .song-container {
+            display: none;
+        }
+        .song-container {
+            margin-top: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        .exit-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .wave span {
+            display: inline-block;
+            animation: wave-animation 1s infinite;
+        }
+        .wave span:nth-child(odd) {
+            animation-delay: 0.1s;
+        }
+        .wave span:nth-child(even) {
+            animation-delay: 0.3s;
+        }
+        @keyframes wave-animation {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .rainbow {
+            animation: rainbow-animation 1s infinite;
+            display: inline-block;
+            background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            color: transparent;
+            background-size: 400%;
+        }
+        @keyframes rainbow-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+    <script>
+        function showMainMenu() {
+            document.body.style.backgroundColor = '#f0f0f0';
+            document.body.style.color = '#000';
+            document.querySelector('.main-menu').style.display = 'block';
+        }
+
+        function hideIntro() {
+            document.querySelectorAll('.intro').forEach(element => {
+                element.style.display = 'none';
+            });
+        }
+
+        function showIntro() {
+            const intro1 = document.querySelector('.intro1');
+            const intro2 = document.querySelector('.intro2');
+
+            intro1.classList.add('fade-in');
+            setTimeout(() => {
+                intro1.classList.remove('fade-in');
+                intro1.classList.add('fade-out');
+                intro2.classList.add('fade-in');
+                setTimeout(() => {
+                    intro2.classList.remove('fade-in');
+                    intro2.classList.add('fade-out');
+                    hideIntro();
+                    showMainMenu();
+                }, 7000); // 7 seconds for the second intro
+            }, 7000); // 7 seconds for the first intro
+        }
+
+        function showSong(songId) {
+            document.querySelectorAll('.song-container').forEach(container => container.style.display = 'none');
+            document.getElementById(songId).style.display = 'block';
+        }
+
+        function showMainMenu() {
+            document.querySelectorAll('.song-container').forEach(container => container.style.display = 'none');
+            document.querySelector('.main-menu').style.display = 'block';
+        }
+
+        // Show main menu after intro
+        window.onload = function() {
+            showIntro();
+        }
+    </script>
+</head>
+<body>
+    <div class="intro intro1">The West to East presents</div>
+    <div class="intro intro2">Shalom</div>
+
+    <div class="main-menu">
+        <h1>Playlist Lagu</h1>
+        <button onclick="showSong('betapaHebat')">1. Betapa Hebat</button>
+        <button onclick="showSong('mengejarHadirMu')">2. Mengejar HadirMu</button>
+        <button onclick="showSong('engkauBaik')">3. Engkau Baik</button>
+        <button onclick="showSong('mengenalMu')">4. MengenalMu</button>
+    </div>
+
+    <div id="betapaHebat" class="song-container">
+        <h2>Betapa Hebat</h2>
+        <p>True Worshippers</p>
+        <p>Key: E</p>
+        <pre>
+E           B                C#m
+Berkuasa di bumi  di surga
+             A          B
+Bertakhta dalam kemuliaan
+E         B
+Dialah Tuhan Allah kita
+  F#m         C#m
+NamaNya berkuasa
+   A         B
+Pembebas umatNya
+
+[chorus1]
+       E            B
+Betapa hebat betapa kuat
+           F#m
+Dahsyatnya Allah kita
+       C#m          F#           B
+Dia berjaya atas semua perbuatan-Nya
+
+[chorus2]
+       E            B
+Betapa hebat betapa kuat
+           A
+Dahsyatnya Allah kita
+         C#m        F#          B
+Dia ternama Yesus Raja S'gala Raja
+              E
+Tuhan Allah kita
+        </pre>
+        <a href="https://www.youtube.com/watch?v=fuJvbMsnOX4&ab_channel=GKDIOfficial" target="_blank">Referensi Lagu</a>
+        <button class="exit-button" onclick="showMainMenu()">Exit</button>
+    </div>
+
+    <div id="mengejarHadirMu" class="song-container">
+        <h2>Mengejar HadirMu</h2>
+        <p>Key: G</p>
+        <pre>
+Intro : G  C   G  C  Em  D   C
+
+G        D/F#           C
+DEKAT PADA-MU ITU RINDUKU
+G          D/F#               C
+SETIAP KATAKU KAU PUN MENUNGGU
+          Am7        G/B
+TAK KUSANGKA KUTEMUKAN
+       Am7     D    Em
+SATU KASIH YANG ABADI
+            C      Bm  Am7 C/G   Dsus    D
+KINI KU DATANG DAN KUBAWA HIDUPKU
+
+REFF:
+        C         D
+MEMANDANG WAJAH-MU
+       Bm7          Em7
+MENGIKUTI KEBAIKAN-MU
+   C            D
+MENGEJAR HADIR-MU
+            G
+DALAM HIDUPKU
+
+   C            D/C
+MEMBAWA SEMBAHKU
+         Bm7           Em7
+MENYATAKAN KEBESARAN-MU
+       C           D
+MENGEJAR HADIR-MU
+               G
+DALAM HIDUPKU
+        </pre>
+        <a href="https://www.youtube.com/watch?v=fuJvbMsnOX4&ab_channel=GKDIOfficial" target="_blank">Referensi Lagu</a>
+        <button class="exit-button" onclick="showMainMenu()">Exit</button>
+    </div>
+
+    <div id="engkauBaik" class="song-container">
+        <h2>Engkau Baik</h2>
+        <p>Edward Chen</p>
+        <p>Key: G</p>
+        <pre>
+G                   D                  Em
+  Dengan hati bersyukur masuk dihadiratMu
+                   C    D
+  membawa pujian bagiMu Yesus
+G                   D                 Em
+  Ku memandang wajahMu bersuka didepanMu
+                      C
+  sambil menc'ritakan kasihMu
+Am             Bm
+  Ku mengangkat  tanganku
+C            Am    Bm      D
+  bersorak sorai bagi kebaikanMu
+
+Reff:
+G            D           Em
+  Engkau baik sangat baik
+                    C      D
+  Kasih setiaMu tak pernah berubah
+G            D           Em
+  Engkau baik sangat baik
+                    C      D     G
+  Kasih setiaMu tak pernah berubah
+        </pre>
+        <a href="https://www.youtube.com/watch?v=54ziYqokF8U&ab_channel=LifehouseMusic" target="_blank">Referensi Lagu</a>
+        <button class="exit-button" onclick="showMainMenu()">Exit</button>
+    </div>
+
+    <div id="mengenalMu" class="song-container">
+        <h2>MengenalMu</h2>
+        <p>Sidney Mohede</p>
+        <p>Key: A</p>
+        <pre>
+Intro: A   E A   E
+
+   A             E/A                  D
+Bila ku buka mataku dan lihat wajah-Mu 
+     F#m E
+ku terkagum
+  A                E                    D
+bila ku lihat hidupku dan Karya tangan-Mu
+      F#m  E
+ku tersanjung
+    DM7            E/D            C#m
+kar`na semua yang baik dalam hidupku
+       F#m
+itulah karya-Mu
+       Bm7            E
+Kau b`ri kesempatan yang baru
+
+Reff:
+     A                DM7
+dan ku ingin mengenal-Mu Tuhan
+        Bm           E            A    D E
+lebih dalam dari s`mua yang ku kenal 
+    A                 DM7
+tiada kasih yang melebihi-Mu
+    Bm           E              A
+ku ada untuk menjadi penyembah-Mu
+        </pre>
+        <a href="https://www.youtube.com/watch?v=32yHe2AELgQ&ab_channel=LifehouseMusic" target="_blank">Referensi Lagu</a>
+        <button class="exit-button" onclick="showMainMenu()">Exit</button>
+    </div>
+
+    <div class="footer">
+        <div>Created by <span class="wave">
+            <span>T</span><span>h</span><span>e</span><span>W</span><span>e</span><span>s</span><span>t</span><span>t</span><span>o</span><span>E</span><span>a</span><span>s</span><span>t</span>
+        </span></div>
+        <div>coded by <span class="rainbow">Xenogenesis</span></div>
+    </div>
+</body>
+</html>
