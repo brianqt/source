@@ -1,0 +1,21 @@
+Tujuan Sistem Manajemen File:
+Sistem ini dibuat supaya pengelolaan file dalam proyek  bisa lebih teratur dan gampang diakses. Dengan adanya sistem ini, file seperti penelitian, dokumen pengajaran, laporan, dan referensi bisa tersimpan dengan rapi dan bisa diakses oleh semua anggota tim yang membutuhkan.
+
+Fitur Utama:
+Pengelolaan File dan Folder:
+
+Sistem memungkinkan pengaturan file dalam folder dan subfolder sesuai kategori atau topik, supaya file tidak tercampur dan mudah dicari.
+Penyimpanan Terpusat:
+
+Semua file disimpan di satu tempat, jadi jika ada file yang dibutuhkan, tinggal cari di dalam sistem.
+Akses dan Kolaborasi:
+
+Fitur untuk memberikan akses ke orang lain supaya bisa melihat atau mengedit file yang relevan, cocok untuk kolaborasi dalam proyek.
+Backup dan Keamanan:
+
+Sistem melakukan backup otomatis untuk memastikan file yang di-upload tidak hilang. Keamanan terjamin karena hanya orang yang memiliki izin yang bisa mengakses file tersebut.
+Cara Kerja Server:
+Server Aktif: Server berjalan dari Senin hingga Minggu, mulai jam 9 pagi hingga jam yang ditentukan.
+Upload File: Setiap kali ada file yang di-upload, server akan langsung aktif untuk memproses permintaan tersebut.
+Request File: Anda bisa mengakses file yang dibutuhkan kapan saja, asalkan server sedang aktif.
+Dengan sistem ini, pengelolaan file menjadi lebih efisien dan mempermudah pekerjaan tim dalam proyek diakonia transformatif.
